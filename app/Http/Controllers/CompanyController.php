@@ -44,9 +44,9 @@ class CompanyController extends Controller
     {
          // validate the input
          $validation = Validator::make($request->all(),[
-            'name' => 'required|unique:companies|max:100',
+            'name' => 'required|unique:companies,name|max:100',
             'address' => 'nullable|max:100',
-            'email' => 'nullable|email|unique:companies|max:100',
+            'email' => 'nullable|email|unique:companies,email|max:100',
             'phone' => 'nullable|digits_between:1,10',
             'description' => 'nullable|max:255',
         ]);
